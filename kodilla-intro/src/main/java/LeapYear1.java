@@ -1,5 +1,3 @@
-import java.util.concurrent.SynchronousQueue;
-
 public class LeapYear1 {
     public static void main(String[] args) {
 
