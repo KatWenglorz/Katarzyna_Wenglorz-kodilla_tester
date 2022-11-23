@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CashMachineTestSuite {
-
     @Test
     public void shouldHaveZeroLength() {
         CashMachine cashMachine = new CashMachine();

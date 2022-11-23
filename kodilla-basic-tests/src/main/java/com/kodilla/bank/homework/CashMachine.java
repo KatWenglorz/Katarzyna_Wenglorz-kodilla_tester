@@ -8,6 +8,7 @@ public class CashMachine {
         this.values = new int[0];
         this.size = 0;
     }
+
     public void add(int value) {
         this.size++;
         int[] newTab = new int[this.size];

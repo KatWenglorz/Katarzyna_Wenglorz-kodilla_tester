@@ -9,8 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BankTestSuite {
     @Test
     public void balanceShouldBeZeroIfThereAreNoWithdrawalsNorDeposits() {
-        CashMachine cashMachine = new CashMachine();
-        assertEquals(0, cashMachine.getBalance());
+        Bank bank = new Bank();
+        CashMachine[] cashMachines = bank.getCashMachines();
+        assertEquals(0, bank.getBalance());
     }
 
     @Test
@@ -25,7 +26,6 @@ public class BankTestSuite {
 
         assertEquals(200, bank.getBalance());
     }
-
     @Test
     public void shouldGetNumberOfWithdrawals() {
         Bank bank = new Bank();
@@ -38,7 +38,6 @@ public class BankTestSuite {
 
         assertEquals(3, bank.getNumberOfWithdrawals());
     }
-
     @Test
     public void shouldGetNumberOfDeposits() {
         Bank bank = new Bank();
@@ -51,7 +50,6 @@ public class BankTestSuite {
 
         assertEquals(2, bank.getNumberOfDeposits());
     }
-
     @Test
     public void numberOfWithdrawalsShouldBeZeroIfThereAreNoWithdrawals() {
         Bank bank = new Bank();
@@ -95,7 +93,6 @@ public class BankTestSuite {
 
         assertEquals(-100, bank.getAverageOfWithdrawals(), 0.01);
     }
-
     @Test
     public void shouldGetAverageOfDeposits() {
         Bank bank = new Bank();
@@ -107,6 +104,5 @@ public class BankTestSuite {
         cashMachines[3].add(-50);
 
         assertEquals(250, bank.getAverageOfDeposits(), 0.01);
-
     }
 }

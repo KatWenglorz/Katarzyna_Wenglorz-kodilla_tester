@@ -22,7 +22,6 @@ public class Bank {
         }
         return sum;
     }
-
     public int getNumberOfWithdrawals() {
         int numberOfWithdrawals = 0;
         for (int i = 0; i < 4; i++) {
@@ -35,7 +34,6 @@ public class Bank {
         }
         return numberOfWithdrawals;
     }
-
     public int getNumberOfDeposits() {
         int numberOfDeposits = 0;
         for (int i = 0; i < 4; i++) {
@@ -48,7 +46,6 @@ public class Bank {
         }
         return numberOfDeposits;
     }
-
     public double getAverageOfWithdrawals() {
         int sum = 0;
         int numberOfWithdrawals = 0;
@@ -66,7 +63,6 @@ public class Bank {
             }
         return sum / numberOfWithdrawals;
     }
-
         public double getAverageOfDeposits() {
             int sum = 0;
             int numberOfDeposits = 0;
