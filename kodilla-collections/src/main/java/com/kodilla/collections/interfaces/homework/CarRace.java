@@ -10,7 +10,7 @@ public class CarRace {
         doRace(kia);
     }
     private static void doRace(Car car) {
-        car.increaseSpeed(3);
+        car.increaseSpeed(3, false);
         car.decreaseSpeed(2);
 
         System.out.println(car.getSpeed());
