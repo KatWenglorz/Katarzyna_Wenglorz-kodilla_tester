@@ -37,12 +37,9 @@ public class UsersManager {
                 .map(UsersManager::getUserName)
                 .collect(Collectors.toList());
         return usersZeroPost;
-
     }
 
     public static String getUserName(User user) {
         return user.getUsername();
     }
-
-
 }

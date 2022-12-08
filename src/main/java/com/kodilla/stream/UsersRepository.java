@@ -13,5 +13,6 @@ public class UsersRepository {
             users.add(new User("Gale Boetticher", 44, 2, "Chemists"));
             users.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
             return users;
+
     }
 }

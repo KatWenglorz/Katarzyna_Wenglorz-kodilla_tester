@@ -61,5 +61,4 @@ class UsersManagerTest {
         expectedList2.add("Mike Ehrmantraut");
         assertEquals(result2, expectedList2);
     }
-
 }
