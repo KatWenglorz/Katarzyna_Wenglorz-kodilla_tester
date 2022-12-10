@@ -36,17 +36,4 @@ class ForumStatsTest {
         double expected = 4;
         assertEquals(result, expected);
     }
-
-    @Test
-    public void testAverageNumberOfPostsOfUsersOver40WithZeroUsers() {
-        //given
-        List<User> usersList = new ArrayList<>();
-        usersList.add(new User("Mike Ehrmantraut", 20, 0, "Security"));
-        usersList.add(new User("Tuco Salamanca", 34, 116, "Manager"));
-        //when
-        double result = ForumStats.averageNumberOfPostsOfUsersOver40(usersList);
-        //then
-        double expected = 0;
-        assertEquals(result, expected);
-    }
 }

@@ -30,4 +30,5 @@ public class ForumStats {
                 .getAsDouble();
         return avg1;
     }
+
 }
