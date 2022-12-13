@@ -9,7 +9,6 @@ public class Warehouse {
     public Warehouse(List<Order> orders) {
         this.orders = new ArrayList<Order>();
     }
-
     public List addOrder (Order order) {
         this.orders.add(order);
         return orders;
