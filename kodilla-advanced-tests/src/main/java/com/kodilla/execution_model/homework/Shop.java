@@ -2,6 +2,7 @@ package com.kodilla.execution_model.homework;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,19 +16,18 @@ public class Shop {
     public List getOrdersFromADateRange(String dateOne, String dateTwo) throws ParseException {
         List<Order> ordersWithDates = new ArrayList<>();
         int index = 0;
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MM");
-        Date date1 = formatter.parse(dateOne);
-        Date date2 = formatter.parse(dateTwo);
+        LocalDate date1 = LocalDate.parse(dateOne);
+        LocalDate date2 = LocalDate.parse(dateTwo);
 
         for (index = 0; index < this.orders.size(); index++) {
-            Date date = formatter.parse(this.orders.get(index).getDate());
-            if(date.after(date1) && date.before(date2)) {
+            LocalDate date = LocalDate.parse(this.orders.get(index).getDate());
+            if(date.isAfter(date1) && date.isBefore(date2)) {
                 ordersWithDates.add(orders.get(index));
             }
         }
         return ordersWithDates;
     }
-    public Order getOrdersFromARange(double max, double min) {
+    public Order getOrdersFromAValueRange(double max, double min) {
         int index = 0;
         for (index = 0; index < this.orders.size(); index++) {
             if (this.orders.get(index).getValue() >= min && this.orders.get(index).getValue() <= max) {
