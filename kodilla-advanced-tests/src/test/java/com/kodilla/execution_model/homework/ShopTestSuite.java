@@ -10,11 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShopTestSuite {
     Shop shop = new Shop();
 
-    Order one = new Order(10.00, "2022-10-12", "pablo");
-    Order two = new Order(5.60, "2022-11-12", "mark");
-    Order three = new Order(45.40, "2022-11-12", "ann");
+    Order one = new Order(10.00, "2022-12-10", "pablo");
+    Order two = new Order(5.60, "2022-12-11", "mark");
+    Order three = new Order(45.40, "2022-12-11", "ann");
     Order four = new Order(67.80, "2022-12-12", "mike");
-    Order five = new Order(45.20, "2022-13-12", "rachel");
+    Order five = new Order(45.20, "2022-12-13", "rachel");
 
     @Test
     public void shouldAddOrderToShop() {
@@ -26,14 +26,14 @@ class ShopTestSuite {
     @Test
     public void shouldGetOrdersFromADateRange() throws ParseException {
         //when
-        List<Order> result1 = shop.getOrdersFromADateRange("2022-11-12", "2022-13-12");
+        List<Order> result1 = shop.getOrdersFromADateRange("2022-12-11", "2022-12-13");
         //then
         assertEquals(List.of(67.8, "2022-12-12", "mike"), result1);
     }
     @Test
-    public void shouldGetOrdersFromARange() {
+    public void shouldGetOrdersFromAValueRange() {
         //when
-        Order result2 = shop.getOrdersFromARange(100.0, 50.0);
+        Order result2 = shop.getOrdersFromAValueRange(100.0, 50.0);
         //then
         assertEquals(67.80, result2.getValue(), 0.01);
         assertEquals("2022-12-12", result2.getDate());
@@ -42,7 +42,7 @@ class ShopTestSuite {
     @Test
     public void shouldReturnNullWhenPassingValueOutOfRange() {
         //when
-        Order result3 = shop.getOrdersFromARange(200.0, 100.0);
+        Order result3 = shop.getOrdersFromAValueRange(200.0, 100.0);
         //then
         assertNull(result3);
     }
