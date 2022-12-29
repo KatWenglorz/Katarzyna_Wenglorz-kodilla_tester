@@ -28,7 +28,7 @@ class ShopTestSuite {
         //when
         List<Order> result1 = shop.getOrdersFromADateRange("2022-12-11", "2022-12-13");
         //then
-        assertEquals(List.of(67.8, "2022-12-12", "mike"), result1);
+        assertEquals(new Order(67.8, "2022-12-12", "mike"), result1.get(0));
     }
     @Test
     public void shouldGetOrdersFromAValueRange() {
